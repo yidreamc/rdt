@@ -1,0 +1,13 @@
+{
+    "name": "rdt",
+    "version": "1.0.0",
+    "description": "",
+    "bin": {
+        "rdt": "./src/index.js"
+    },
+    "author": "yidreamc",
+    "dependencies": {
+        "mkdirp": "^0.5.1",
+        "readline-sync": "^1.4.9"
+    }
+}
