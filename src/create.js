@@ -35,10 +35,12 @@ function create(fpath, name) {
 function dealTemplate(file, name) {
     // 相对文件名字
     const rename = file.match(/template\\\w+\\([\w\W]+)/)[1].replace(/\$name/g,name);
+
+    // 复制的目的地
     const des = path.join(config.path, rename);
     const basename = path.basename(des);
     mkdirp(path.dirname(des));
-    fs.writeFileSync(des, fs.readFileSync(file));
+    fs.writeFileSync(des, fs.readFileSync(file,'utf-8').replace(/\$\{name\}/g, name));
 
 }
 
