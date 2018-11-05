@@ -44,5 +44,10 @@ function dealTemplate(file, name) {
 
 }
 
-const templateRoot = path.join(__dirname, '../template')
-selectTemplate(templateRoot, 1, "Rate");
+// const templateRoot = path.join(__dirname, '../template')
+// selectTemplate(templateRoot, 1, "Rate");
+
+
+const tmp = fs.readFileSync('../template/_a', 'utf-8');
+const aaa = tmp.match(/@insert\s(\d+)\r\n([\w\W]+)@insertend/)
+console.log(aaa);
